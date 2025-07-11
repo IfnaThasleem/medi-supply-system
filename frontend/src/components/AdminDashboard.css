@@ -1,0 +1,584 @@
+/* ==========================
+   Root Theme Colors
+========================== */
+:root {
+  --bg-color: #659bec;
+  --text-color: #2c3e50;
+  --sidebar-bg: #2c3e50;
+  --sidebar-text: #ecf0f1;
+  --card-bg: #ffffff;
+  --accent: #27ae60;
+  --hover-bg: #34495e;
+  --hover-border: #00cec9;
+  --header-bg: #ffffff;
+  --border: #ddd;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --transition: 0.3s ease;
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --sidebar-bg: #111;
+  --sidebar-text: #bbb;
+  --card-bg: #1e1e1e;
+  --hover-bg: #333;
+  --hover-border: #00cec9;
+  --header-bg: #1e1e1e;
+  --border: #333;
+  --shadow: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  animation: fadeIn 0.6s ease;
+}
+
+
+.sidebar {
+  width: 230px;
+  background-color: var(--sidebar-bg);
+  color: var(--sidebar-text);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.sidebar-logo img {
+  width: 70px;
+  height: 70px;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.sidebar nav ul li:hover,
+.sidebar nav ul li.active {
+  background-color: var(--hover-bg);
+  padding-left: 10px;
+  border-left: 3px solid var(--hover-border);
+}
+
+
+.topbar {
+  height: 60px;
+  background-color: var(--header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar .title {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.topbar-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ==========================
+   Buttons
+========================== */
+.logout,
+.add-button,
+.edit-btn,
+.delete-btn,
+.toggle-theme {
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.logout {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.logout:hover {
+  background: #c0392b;
+}
+
+.add-button {
+  background-color: var(--accent);
+  color: white;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #e67e22;
+  color: white;
+}
+
+.toggle-theme {
+  background: transparent;
+  font-size: 1.25rem;
+  color: var(--text-color);
+}
+
+/* Hover scale */
+.add-button:hover,
+.edit-btn:hover,
+.delete-btn:hover,
+.toggle-theme:hover {
+  transform: scale(1.05);
+}
+
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  transition: background var(--transition);
+}
+
+.inventory-content,
+.dashboard-content,
+.employee-content {
+  padding: 2rem;
+}
+
+.inventory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.inventory-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+
+.inventory-table,
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  box-shadow: 0 0 10px var(--shadow);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.inventory-table th,
+.inventory-table td,
+.orders-table th,
+.orders-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.inventory-table th,
+.orders-table th {
+  background: #0e0303;
+  color: #f7f0f0;
+}
+
+
+.quick-stats,
+.activity-feed,
+.vehicle-box {
+  background: var(--card-bg);
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px var(--shadow);
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #3498db;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.activity-scroll,
+.vehicle-scroll,
+.stats-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  margin-top: 1rem;
+}
+
+.activity-scroll p,
+.vehicle-scroll p {
+  background: #ecf0f1;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+
+.search-bar {
+  padding: 0.5rem 2rem 0.5rem 2.5rem;
+  width: 280px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: url("https://cdn-icons-png.flaticon.com/512/622/622669.png") no-repeat 8px center;
+  background-size: 20px;
+  background-color: #0a0a0a;
+  font-size: 0.95rem;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2);
+}
+
+/* ==========================
+   Animations
+========================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .topbar {
+    height: 60px;
+    padding: 0 1rem;
+  }
+}
+
+/* ==========================
+   Orders Page Enhancements
+========================== */
+.orders-page {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.orders-table,
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card-bg);
+  box-shadow: 0 0 8px var(--shadow);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.orders-table th,
+.orders-table td,
+.customers-table th,
+.customers-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.orders-table th,
+.customers-table th {
+  background-color: #070707;
+  font-weight: 600;
+  color: white;
+}
+
+/* Form section for employees */
+.form-section {
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px var(--shadow);
+}
+
+.form-section input {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 0.95rem;
+  background-color: white;
+  color: var(--text-color);
+}
+
+.form-section button {
+  margin-top: 0.5rem;
+}
+
+.customers-section {
+  margin-top: 2rem;
+}
+
+.customer-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table th, .customer-table td {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.cancelled-row {
+  background-color: #ffcccc; /* light red */
+  color: #a00;
+  font-weight: bold;
+}
+
+/* Buttons style */
+.customers-table button {
+  border: none;
+  padding: 6px 12px;
+  margin: 0 4px;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* View button - blue */
+.customers-table button.view-btn {
+  background-color: #007bff;
+}
+.customers-table button.view-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Edit button - orange */
+.customers-table button.edit-btn {
+  background-color: #ff7f00;
+}
+.customers-table button.edit-btn:hover {
+  background-color: #cc6600;
+}
+
+/* Delete button - red */
+.customers-table button.delete-btn {
+  background-color: #dc3545;
+}
+.customers-table button.delete-btn:hover {
+  background-color: #a71d2a;
+}
+
+/* Delete button while deleting */
+.customers-table button.delete-btn.deleting {
+  background-color: #b22222;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+.clickable {
+  cursor: pointer;
+  margin: 0 10px;
+}
+
+.download-btn {
+  background-color: #5b8def;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.download-btn:hover {
+  background-color: #416bb3;
+}
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.customer-details-box {
+  background: #f9f9f9;
+  border-left: 5px solid #4caf50;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.customer-details-box h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.customer-details-box p {
+  margin: 4px 0;
+}
+
+.back-btn {
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: #777;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background-color: #555;
+}
+/* General button styles */
+button {
+  padding: 8px 16px;
+  background-color: #4caf50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 8px 4px;
+  font-size: 14px;
+}
+
+/* Hover effect */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Cancel button variation */
+button.cancel {
+  background-color: #f44336; /* Red */
+}
+
+button.cancel:hover {
+  background-color: #d32f2f;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #1e1e2f;
+  color: #ffffff;
+}
+
+.dark-mode input,
+.dark-mode button,
+.dark-mode select {
+  background-color: #2a2a40;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.dark-mode .sidebar {
+  background-color: #252538;
+}
+
+.dark-mode .main {
+  background-color: #1e1e2f;
+}
+
+.dark-mode .topbar {
+  background-color: #2a2a40;
+  color: #ffffff;
+}
+
+.dark-mode .form-container input,
+.dark-mode .form-container button {
+  background-color: #2a2a40;
+  color: white;
+}
+
+.topbar-right span {
+  cursor: pointer;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.topbar-right span:hover {
+  color: #007bff;
+}
+
+.topbar-right span {
+  cursor: pointer;
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.topbar-right span:hover {
+  color: #007bff;
+}
+
