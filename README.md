@@ -14,3 +14,37 @@ This is a web-based intranet application developed as a final year project for a
 - 📄 **PDF Reports** – Auto-generated reports for income, expenses, and stock
 - 📦 **Client Management** – Manage pharmacies and shop clients
 
+
+⚙️ Technology Stack
+
+| Layer      | Tech Used                          |
+|------------|------------------------------------|
+| Frontend   | HTML5, CSS3, JavaScript, React.js, Bootstrap 
+| Backend    | Node.js, Express.js,      
+| Database   |  mySql              
+| APIs       | Google Maps API  
+| Auth       | JWT (JSON Web Tokens)              
+| Deployment | XAMPP (local)
+| PDF Report | jsPDF              
+
+📁 Project Structure
+
+/frontend
+└── React Components (UI)
+
+/backend
+├── routes/
+├── controllers/
+├── models/
+└── server.js
+
+/database
+└── MySqlcollections (Medicines, Users, Orders, Payments)
+
+ **Clone the repository**
+   ```bash
+   git clone https://github.com/IfnaThasleem/medi-supply-system.git
+
+
+
+
